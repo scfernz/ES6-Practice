@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Let vs. Const</title>
+    </head>
+    <body>
+        <script>
+            const string = 'abcd123';
+            let points = 60;
+            let winner = false;
+            // let points = 80; // Throws error, you cannot declare 2 let variables with the same name within the same scope!
+            if (points > 30) {
+                let winner = true;
+                console.log(winner); // true -> block scoped, it is a new variable despite having the same name!
+            }
+            console.log(winner); // false
+
+            // string = 'dcba321'; // Throws error. Const cannot be changed.
+
+            const person = {
+                name: 'Sean',
+                age: 28
+            } // Object {name: 'Sean', age: 28}
+
+            console.log(person);
+            // person = {name: 'Shawn'}; // Error we cannot change the object since it is a constant
+            person.name = 'Sean Fernandez';
+            console.log(person); // Object {name: 'Sean Fernandez', age: 28} we can change properties on an object but we cannot completely re-assign a constant
+
+            const immutable = Object.freeze(person);
+            immutable.name = 'Shawn';
+            console.log(immutable); // Object {name: 'Sean Fernandez', age: 28} we can use object.freeze if we want the properties to not change
+        </script>
+    </body>
+</html>

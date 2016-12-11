@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Var Let Const</title>
+    </head>
+    <body>
+        <script>
+            function get_width() {
+                var width = 100;
+                console.log(width)
+            }
+            get_width();
+            // console.log(width); width is not defined due to function scope var age = 100; if (age > 12) { var dogYears = age * 7; console.log(dogYears); // 700 } console.log(dogYears); // 700 -> This is a problem because dogYears should not be accessible
+            // outside of the if loop. Var is only function scoped. Due to hoisting it becomes a global variable when used inside if statement.
+
+            var age = 100;
+            if (age > 12) {
+                let dogYears = age * 7;
+                console.log(dogYears); // 700
+            }
+            console.log(dogYears); // not defined which is what we want because dogYears should be a temporary variable. let and const are block scoped.
+        </script>
+    </body>
+</html>

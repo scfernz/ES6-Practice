@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Use Cases for Let and Const</title>
+    </head>
+    <body>
+        <script>
+            // let and const allow us to get rid of IIFEs (Immediately Invoked Function Expressions), just wrap a variable in brackets and it will be private
+            {
+              const name = "Sean";
+              console.log(name);
+            }
+
+            for (let i = 0; i < 10; i++) {
+              setTimeout(function() {console.log(i), 1000}); // If we used var it will print 10 because the function will have already run on page load and be evaluated at 10 and then run after 1 second instead of looping through each value.
+            }
+            console.log(i); // Not defined. We want i to only be a temporary variable for looping! Always use let.
+        </script>
+    </body>
+</html>

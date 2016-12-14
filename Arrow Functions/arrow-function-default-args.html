@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Arrow function default arguments</title>
+  </head>
+  <body>
+    <script>
+      function calculateBill(total, tax = 0.16, tip = 0.15) {
+        return total + (tax * total) + (tip * total); // We can put default arguments in the parameters so they will calculate if not provided
+      }
+
+      const totalBill = calculateBill(45);
+      console.log(totalBill); // 58.59
+    </script>
+  </body>
+</html>

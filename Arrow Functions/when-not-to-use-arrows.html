@@ -46,7 +46,7 @@
             const beemer = new Car('bmw', 'blue');
             const subie = new Car('Subaru', 'white');
 
-            Car.prototype.summarize = function() { // Again we cannot bind `this` with prototypes
+            Car.prototype.summarize = function() { // Again we cannot bind `this` with prototypes when using an arrow function, use a regular function declaration
                 return `This car is a ${this.make} in the colour ${this.colour}`;
             };
 

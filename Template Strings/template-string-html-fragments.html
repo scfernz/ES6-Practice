@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Template Strings with HTML Fragments</title>
+  </head>
+  <body>
+
+    <script>
+      // Before when creating multi-line strings we would have to use backslashes but with template strings we can create multi-line blocks of text which can be rendered
+
+      const person = {
+        name: 'Sean Fernandez',
+        job: 'Web Developer',
+        city: 'San Diego',
+        bio: 'Sean loves front-end development!'
+      };
+
+      const people = [
+        {name: 'Sean'},
+        {name: 'Rey'},
+        {name: 'Jeff'}
+      ];
+
+      const beer = {
+        name: 'West Coast IPA',
+        brewery: 'Green Flash Brewery',
+        keywords: ['Citrus', 'Pine', 'IPA', 'Grapefruit']
+      };
+
+      function renderKeywords(keywords) {
+        return `
+          ${keywords.map(keyword => `<li>${keyword}</li>`).join('')}
+        `;
+      }
+
+      const markup = `
+        <div class="person">
+          <h2>${person.name}</h2>
+          <span class="job">${person.job}</span>
+          <p class="location">${person.city}</p>
+          <p class="bio">${person.bio}</p>
+        </div>
+      `;
+
+      // We can nest template strings as well!
+      const markup2 = `
+        <ul class="people">
+          ${people.map(people => `
+              <li>${people.name}</li>
+            `).join('')}
+        </ul>
+      `;
+
+      const markup3 = `
+        <div class="beer">
+          <h2>${beer.name}</h2>
+          <p class="brewery">${beer.brewery}</p>
+          ${renderKeywords(beer.keywords)}
+        </div>
+      `;
+      document.body.innerHTML = markup3;
+    </script>
+  </body>
+</html>

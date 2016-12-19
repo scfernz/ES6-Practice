@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>New String Methods</title>
+  </head>
+  <body>
+    <script>
+
+    const course = 'RFB2';
+    const flightNumber = '20-AC2018-jz';
+    const accountNumber = '825242631RT0001';
+      // .startsWith()
+
+      flightNumber.startsWith('AC'); // false
+      flightNumber.startsWith('AC', 3); // true
+
+      // .endsWith()
+      flightNumber.endsWith('jz'); //true
+      accountNumber.endsWith('RT'); //false
+      accountNumber.endsWith('RT', 11); //true
+
+      // .includes()
+      flightNumber.includes('AC'); //true
+      flightNumber.includes('ac'); //false
+
+      // .repeat()
+      const make = 'BMW';
+      const model = 'x5';
+      const color = 'Black';
+
+      function leftPad(str, length = 20) {
+        return `-${' '.repeat(length - str.length)}${str}`;
+      }
+
+      console.log(leftPad(make));
+      console.log(leftPad(model));
+      console.log(leftPad(color));
+    </script>
+  </body>
+</html>

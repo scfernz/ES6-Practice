@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Tagged Templates Exercise</title>
+    <style>
+      abbr {
+        border-bottom: 1px dotted blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bio">
+    </div>
+    <script>
+      const dict = {
+        HTML: 'Hypertext Markup Language',
+        CSS: 'Cascading Style Sheets',
+        JS: 'Javascript'
+      };
+
+      function abbreviated(strings, ...values) {
+        let abbr_value = values.map((value) => {
+          if (dict[value]) {
+            return `<abbr title="${dict[value]}">${value}</abbr>`;
+          }
+          else {
+            return value;
+          }
+        });
+
+        return strings.reduce((result, string, i) => {
+          return `${result}${string}${abbr_value[i] || ''}`
+        }, '');
+      }
+
+      const firstName = 'Sean';
+      const lastName = 'Fernandez';
+      const sentence = abbreviated`Hi my name is ${firstName} ${lastName} and I love writing ${'HTML'}, ${'CSS'}, and ${'JS'}!`;
+
+      document.body.innerHTML = sentence;
+      console.log(sentence);
+
+    </script>
+  </body>
+</html>

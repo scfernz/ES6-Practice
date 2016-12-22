@@ -16,7 +16,7 @@
       let str = ``;
       console.log(strings);
       console.log(values);
-      strings.forEach((e, i) => {str += `${e} ${(values[i] || '')}`});
+      strings.forEach((e, i) => {str += `${e} <span class="hl">${(values[i] || '')}</span>`});
       return str;
     }
 

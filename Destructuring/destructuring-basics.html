@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Destructuring Basics</title>
+  </head>
+  <body>
+  <script>
+    const person = {
+      first: 'Sean',
+      last: 'Fernandez',
+      country: 'USA',
+      city: 'San Diego',
+      twitter: '@scfernz21'
+    }
+
+    // Before if we wanted to grab a key's value and assign it to a variable we would have to do it this way
+    // const firstName = person.first;
+    // const lastName = person.last;
+
+    // With destructuring we can do it in a much simpler and faster way
+
+    const { first, last, twitter } = person;
+
+    // This creates 3 constants -> first, last, and twitter
+
+    // first = 'Sean', last = 'Fernandez', twitter = '@scfernz21'
+
+    // We can also do destructuring with nested objects
+
+    const Sean = {
+      first: 'Sean',
+      last: 'Fernandez',
+      links: {
+        social: {
+          twitter: 'https://www.twitter.com/scfernz21'
+        },
+        web: {
+          portfolio: 'http://www.scfernz.com'
+        }
+      }
+    }
+
+    // You can rename the key if you want to name it differently with ':'
+
+    const { twitter:tweet } = Sean.links.social; // tweet = 'https://www.twitter.com/scfernz21'
+
+
+  </script>
+  </body>
+</html>

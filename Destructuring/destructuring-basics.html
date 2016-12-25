@@ -45,6 +45,14 @@
 
     const { twitter:tweet } = Sean.links.social; // tweet = 'https://www.twitter.com/scfernz21'
 
+    // We can also set defaults when destructuring similar to functions.
+
+    const settings = {color: 'black', height: 300};
+
+    const {color = 'red', height = 200, width = 300, fontSize = 16} = settings;
+
+    // fontSize = 16;
+    // width = 300;
 
   </script>
   </body>

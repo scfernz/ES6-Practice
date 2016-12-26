@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Swapping Variables with Destructuring</title>
+  </head>
+  <body>
+    <script>
+      let inRing = 'Hulk Hogan';
+      let onSide = 'The Rock';
+
+      // Instead of making a temp variable to swap the two we can use destructuring
+
+      console.log([inRing, onSide]); // ["Hulk Hogan", "The Rock"];
+
+      [inRing, onSide] = [onSide, inRing];
+
+      console.log([inRing, onSide]); // ["The Rock", "Hulk Hogan"]
+
+
+    </script>
+  </body>
+</html>

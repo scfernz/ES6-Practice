@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>For Of With Objects</title>
+  </head>
+  <body>
+    <script>
+      const car = {make: 'Honda', model: 'S2000', color: 'Grey', year: 2005};
+
+      // The for..of loop will not work like a for..in loop when iterating over objects until we get Object.entries() in 2017. So we will have to use the Object.keys() method
+
+      for (key of Object.keys(car)) {
+        console.log(car[key]);
+      }
+    </script>
+  </body>
+</html>

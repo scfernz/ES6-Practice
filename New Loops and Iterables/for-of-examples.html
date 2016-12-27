@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>For Of Loop Use Cases</title>
+  </head>
+  <body>
+    <p>This is paragraph 01</p>
+    <p>This is paragraph 02</p>
+    <p>This is paragraph 03</p>
+    <p>This is paragraph 04</p>
+    <p>This is paragraph 05</p>
+    <p>This is paragraph 06</p>
+    <p>This is paragraph 07</p>
+    <p>This is paragraph 08</p>
+    <p>This is paragraph 09</p>
+    <p>This is paragraph 10</p>
+    <script>
+      const cuts = ['Brisket', 'Chuck', 'Loin', 'Ribeye'];
+
+      // Say we want the index, we can use .entries() which is a new method we have access to and will go over later
+      for (let [i, cut] of cuts.entries()) {
+        console.log(`${cut} has index ${i}`);
+      }
+
+      // There is a special keyword arguments in javascript so if we enter a random number of arguments we can iterate over it with the for..of loop
+      function findSum() {
+        let sum = 0;
+        for (let num of arguments) {
+          sum += num;
+        }
+        console.log(sum);
+        return sum;
+      }
+
+      findSum(123, 521, 23, 52, 94, 33, 85);
+
+      // We can also use it with strings
+
+      const name = 'Sean Fernandez';
+      for (let char of name) {
+        console.log(char);
+      }
+
+      // We can iterate over DOM elements as well
+      const paras = document.querySelectorAll('p');
+      console.log(paras);
+      for (let item of paras) {
+        item.addEventListener('click', function() {
+            console.log(this.innerText)
+          });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>From and Of Methods</title>
+  </head>
+  <body>
+    <div class="people">
+      <p>Sean</p>
+      <p>Don</p>
+      <p>John</p>
+    </div>
+    <script>
+      // The Array.from() method turns "Array-like" instances such as objects or node lists and turns them into arrays.
+
+      const names = document.querySelectorAll('.people p');
+
+      // We cannot just map this because it is a node list thus we need to use the Array.from() method
+      const mapped = Array.from(names).map((name) => name.textContent);
+      console.log(mapped);
+
+      // Say we want to use the arguments object which is not an array (so we do not have the  javascript array methods, which we would want to use). Normally we cannot just run a reduce method on an object so by using the .from() method we can then turn it into an array.
+
+      function findSum() {
+        let sum = 0;
+        let argumentArray = Array.from(arguments);
+        console.log(argumentArray);
+        argumentArray.reduce((acc, cur) => {
+          return sum += acc + cur;
+        }, 0);
+        console.log(sum);
+        return sum;
+      }
+
+      findSum(23, 34, 45); // 205
+
+      // The Array.of() method creates an arrays
+      const nums = Array.of(12,23,45,67,8); // [12, 23, 45, 67, 8]
+    </script>
+  </body>
+</html>

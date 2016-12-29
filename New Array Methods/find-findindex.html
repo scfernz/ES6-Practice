@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Find and FindIndex</title>
+  </head>
+  <body>
+  <script>
+  const posts = [
+     {
+        "code":"BAcyDyQwcX1",
+        "likes":23,
+        "id":"1161022966406956501",
+        "caption": "Example 1"
+     },
+     {
+        "code":"BAcyDyQwcX2",
+        "likes":56,
+        "id":"1161022966406956502",
+        "caption": "Example 2"
+     },
+     {
+        "code":"BAcyDyQwcX3",
+        "likes":8,
+        "id":"1161022966406956503",
+        "caption": "Example 3"
+     },
+     {
+        "code":"BAcyDyQwcX4",
+        "likes":31,
+        "id":"1161022966406956504",
+        "caption": "Example 4"
+     },
+     {
+        "code":"BAcyDyQwcX5",
+        "likes":42,
+        "id":"1161022966406956505",
+        "caption": "Example 5"
+     }
+  ];
+
+  // Given an array of objects, we can use the Array.find() method which uses a callback function to determine whether it is true or false
+
+  const post = posts.find((post) => post.code === "BAcyDyQwcX3");
+  console.log(post); // Returns example 3 object
+
+  // Find index works in similar fashion
+
+  const index = posts.findIndex((post) => post.code === "BAcyDyQwcX3");
+  console.log(index); // 2
+  
+  </script>
+  </body>
+</html>

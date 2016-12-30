@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>...Spread Opertator Basics</title>
+  </head>
+  <body>
+    <script>
+      const featured = ['Deep Dish', 'Pepperoni', 'Hawaiian'];
+      const specialty = ['Margaherita', "Mashed Potato", "Meatzza"];
+
+      // Instead of using concat we can use the spread operator to grab all the elements and put them into a new arrays
+
+      const pizzas = [...featured, 'Veggie', ...specialty];
+      console.log(pizzas);
+      // ["Deep Dish", "Pepperoni", "Hawaiian", "Veggie", "Margaherita", "Mashed Potato", "Meatzza"]
+
+
+      // If we want to make a copy of the array we can also use the spread operator and save it to a new array instead of referencing the first array, no need to create an empty array anymore!
+
+      const pizzas_copy = [...pizzas];
+      pizzas_copy[2] = 'Cheese';
+
+      // ["Deep Dish", "Pepperoni", "Hawaiian", "Veggie", "Margaherita", "Mashed Potato", "Meatzza"]
+
+      console.log(pizzas_copy);
+
+
+
+    </script>
+  </body>
+</html>

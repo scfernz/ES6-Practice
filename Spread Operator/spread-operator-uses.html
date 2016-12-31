@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Spread Operator Uses</title>
+  </head>
+  <body>
+    <div class="people">
+      <p>Sean</p>
+      <p>Don</p>
+      <p>John</p>
+    </div>
+    <script>
+      const people = document.querySelectorAll('.people p');
+      // If we want this in an array, we can use the .from() method to turn array-like objects into an array or we can use the spread operator and place the iterables into a new empty array
+      const people_array = [...people];
+      const names = people_array.map((person) => person.textContent);
+      console.log(names); // ["Sean", "Don", "John"]
+
+      // Another use for the spread operator is if we want to remove an entry from an array
+
+      const comments = [
+        { id: 209384, text: 'I love it!' },
+        { id: 523423, text: 'Cool!' },
+        { id: 632429, text: 'You are so dumb' },
+        { id: 192834, text: 'Nice job!' },
+      ];
+
+      // If we want to remove the mean comment we can slice the array up
+      const index = comments.findIndex((comment) => comment.id === 632429);
+      const filtered_comments = [...comments.slice(0, index), ...comments.slice(index+1)];
+      console.log(filtered_comments);
+    </script>
+  </body>
+</html>

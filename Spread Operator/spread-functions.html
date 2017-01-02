@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Spreading into functions</title>
+  </head>
+  <body>
+    <script>
+      const inventors = ['Einstein', 'Newton', 'Galileo'];
+      const new_inventors = ['Musk', 'Jobs'];
+
+      // If we want to add new_inventors to inventors, we could use .push(). But, pushing new_inventors would create a 2-D array unless we use the .apply() method. Using the spread operator would be a way to do this so it adds the items as individual arguments.
+
+      inventors.push(...new_inventors);
+      console.log(inventors);
+
+      // We can also spread arguments into a functions
+
+      const name = ['Sean', 'Fernandez'];
+      function hello(first, last) {
+        alert(`Hi ${first} ${last}`)
+      }
+
+      hello(...name);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Promises</title>
+  </head>
+  <body>
+  <script>
+    // A promise object is like an I.O.U. for something that will happen in the future. A new promise constructor contains a function with 2 arguments: resolve and reject.
+    const p = new Promise((resolve, reject) => {
+      setTimeout(function() {
+        reject(Error('Error example.')); // Create an error object
+      }, 1000)
+    });
+
+    p
+      .then(data => {
+        console.log(data);
+      }) // When the promise is resolved we can run a .then()
+      .catch(error => {
+        console.log(error); // Otherwise we can display an error object/message
+      })
+  </script>
+  </body>
+</html>

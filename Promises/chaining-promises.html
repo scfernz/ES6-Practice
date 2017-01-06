@@ -8,7 +8,7 @@
     <script>
     const posts = [
       { title: 'I love JavaScript', author: 'Wes Bos', id: 1 },
-      { title: 'CSS!', author: 'Chris Coyier', id: 2 },
+      { title: 'CSS!', author: 'Chris Coyierr', id: 2 },
       { title: 'Dev tools tricks', author: 'Addy Osmani', id: 3 },
     ];
 
@@ -45,9 +45,13 @@
         return hydrateAuthor(post);
       }).then(post =>
         {
-          console.log(post);
+          console.log(post)
         }
+        // To display promise errors use the .catch() method
+      ).catch(err =>
+        console.error(err)
       )
+
     </script>
   </body>
 </html>

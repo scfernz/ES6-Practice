@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Multiple Promises</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    const weather = new Promise((resolve) => {
+      setTimeout(() =>
+      {
+        resolve({temp: 74, unit: 'fahrenheit', condition: 'Sunny'})
+      }, 3000)
+    })
+
+    const tweets = new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(['Javascript is awesome', 'I like sushi'])
+      }, 500)
+    });
+
+    // If we want to run multiple promises we can use Promise.all() but note that the speed it comes back at depends on how long it takes for all of them to resolve, in this case 3000ms.
+
+    Promise.all([weather, tweets]).then(responses => {
+      const [weatherData, tweetData] = responses;
+      console.log(weatherData, tweetData)
+    })
+
+
+    </script>
+  </body>
+</html>

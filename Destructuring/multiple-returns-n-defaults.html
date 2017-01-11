@@ -16,20 +16,23 @@
       return converted;
     }
 
-    // If we want multiple returns from a function we can use destructuring, order does not matter and we can pull only the keys we want
+    /* If we want multiple returns from a function we can use destructuring,
+    order does not matter and we can pull only the keys we want */
 
     const { GPB, USD, AUD, MEX } = convertCurrency(100);
 
-    console.log(USD, GPB, AUD, MEX)
+    console.log(USD, GPB, AUD, MEX);
 
 
-    // Another tip, we can pass objects to functions so that order does not matter by using destructuring! But, if we are using defaults we must create a default empty object in case no object is passed.
+    /* Another tip, we can pass objects to functions so that order does not
+    matter by using destructuring! But, if we are using defaults we must create
+    a default empty object in case no object is passed. */
 
-    function tipCalc({total = 100, tip = 0.15, tax = 0.13} = {}) {
+    function tipCalc({ total = 100, tip = 0.15, tax = 0.13 } = { }) {
       return total + (tip * total) + (tax * total);
     }
 
-    let bill = tipCalc({tip: 0.20, total: 200});
+    let bill = tipCalc({ tip: 0.20, total: 200 });
 
     console.log(bill);
 

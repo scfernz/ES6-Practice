@@ -8,14 +8,17 @@
   <script>
     const sean = Symbol('Sean');
     const person = Symbol('Sean');
-    /// sean === person -> false
+    function test() {
+      return sean === person; // -> false
+    }
+    test();
 
     // Symbols are unique though they can have the same name
     const classRoom = {
-      [Symbol('John')]: {grade: 80, gender: male},
-      [Symbol('Don')]: {grade: 80, gender: male},
-      [Symbol('Don')]: {grade: 80, gender: male}
-    }
+      [Symbol('John')]: { grade: 80, gender: 'male' },
+      [Symbol('Don')]: { grade: 80, gender: 'male' },
+      [Symbol('Don')]: { grade: 80, gender: 'male' }
+    };
 
     for (person in classRoom) {
       console.log(person);

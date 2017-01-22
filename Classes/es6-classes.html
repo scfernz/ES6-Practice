@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Inheritance Review</title>
+  </head>
+  <body>
+    <script>
+
+    // Similar to inheritance review we can create classes in ES6 as such.
+
+    // you could also do const dog = class {};
+    class Dog {
+      constructor(name, breed) {
+        this.name = name;
+        this.breed = breed;
+      }
+      bark() {
+        console.log(`Woof woof! My name is ${this.name}!`);
+      }
+      sit() {
+        console.log(`${this.name} sat!`);
+      }
+      // Static methods can only run on the class prototype
+      static scientificName() {
+        console.log('Canis lupus familiaris');
+      }
+
+      get description() {
+        return `${this.name} is a ${this.breed} type of dog.`;
+      }
+      set giveNickname(value) {
+        this.nick = value.trim();
+      }
+      get nickname() {
+        return this.nick;
+      }
+    }
+
+      // function Dog(name, breed) {
+      //   this.name = name;
+      //   this.breed = breed;
+      // }
+      //
+      // Dog.prototype.bark = function bark() {
+      //   console.log(`Woof woof! My name is ${this.name}!`);
+      // };
+      //
+      // const spike = new Dog('Spike', 'Bulldog');
+      // console.log(spike);
+      // spike.bark();
+      // const lassie = new Dog('Lassie', 'Collie');
+      //
+      // Dog.prototype.bark = function bark() {
+      //   console.log(`Bark bark! My name is ${this.name} and I'm a ${this.breed}!`);
+      // };
+      //
+      // lassie.bark();
+      //
+      // Dog.prototype.rollOver = function rollOver() {
+      //   console.log(`${this.name} rolled over!`);
+      // };
+      //
+      // lassie.rollOver();
+    </script>
+  </body>
+</html>

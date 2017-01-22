@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Extending Arrays into Classes for Collections</title>
+  </head>
+  <body>
+    <script>
+      class MovieCollection extends Array {
+        constructor(name, ...movies) {
+          super(...movies);
+          this.name = name;
+        }
+        add(movie, stars) {
+          this.push({ movie, stars });
+        }
+        topRated(limit = 5) {
+          return this.sort((a, b) => (a.stars > b.stars ? -1 : 1)).slice(0, limit);
+        }
+      }
+
+      const movies = new MovieCollection('Sean\'s favorite movies',
+        { name: 'The Matrix', stars: 10 },
+        { name: 'Fist of Legend', stars: 8.5 },
+        { name: 'The Dark Knight', stars: 10 },
+        { name: 'Rogue One', stars: 8 },
+        { name: 'Inception', stars: 9 }
+      );
+
+      movies.add('Eternal Sunshine of The Spotless Mind', 8);
+    </script>
+  </body>
+</html>

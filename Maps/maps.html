@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Maps</title>
+  </head>
+  <body>
+  <script>
+    // Maps are similar to sets but with objects, they do not only take values
+    const dogs = new Map();
+
+    dogs.set('Snickers', 3);
+    dogs.set('Sunny', 2);
+    dogs.set('Hugo', 10);
+
+    // dogs.has('Snickers'); // True
+    // dogs.get('Snickers'); // 3
+    // dogs.delete('Hugo'); // True
+    // dogs // Map {"Snickers" => 3, "Sunny" => 2}
+
+    dogs.forEach((val, key) => console.log(val, key));
+
+    for (const dog of dogs) {
+      console.log(dog);
+    } // Gives a 2D array
+
+    for (const [key, val] of dogs) {
+      console.log(key, val);
+    } // Gives key value pairs
+  </script>
+  </body>
+</html>

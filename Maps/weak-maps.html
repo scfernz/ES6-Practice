@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Weak Maps</title>
+  </head>
+  <body>
+    <script>
+      // Weak maps also get garbage collected, it does not have a size. It cannot be looped over.
+
+      let dog1 = { name: 'Spike' };
+      let dog2 = { name: 'Bruno' };
+
+      const strong = new Map();
+      const weak = new WeakMap();
+
+      strong.set(dog1, 'Spike is strong!');
+      weak.set(dog2, 'Bruno is weak!');
+
+      // dog1 = null;
+      // dog2 = null;
+
+      // weak => weak should be empty after garbage collection
+    </script>
+  </body>
+</html>

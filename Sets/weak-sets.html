@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Weak Sets</title>
+  </head>
+  <body>
+    <script>
+      // Weak sets are like sets but they can only contain objects and it is not enumerable you cannot loop over it
+
+      let dog1 = { name: 'Spike', age: 2 };
+      const dog2 = { name: 'Bruno', age: 3 };
+
+      const weakSauce = new WeakSet([dog1, dog2]);
+
+      console.log(weakSauce);
+      dog1 = null; // Weak sets are automatically garbage collected, if you delete the reference it will get rid of the instance. Also the .clear() methods does not exist for weak sets.
+      console.log(weakSauce);
+    </script>
+  </body>
+</html>

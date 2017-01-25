@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Set Basics</title>
+  </head>
+  <body>
+    <script>
+      // A set is like an array but the contents are unique and not indexed.
+
+      const people = new Set();
+      people.add('Sean');
+      people.add('Mina');
+      people.add('Kelly');
+
+      const size = people.size;
+      console.log(size); // 3, length is not used for sets
+
+      // people.delete('Sean'); // To remove an entry use set.delete()
+      // console.log(people); // Set {"Mina", "Kelly"}
+
+      // people.clear(); // To empty a set use set.clear()
+      // console.log(people); // Set {}
+
+      people.values(); // SetIterator - Generator
+
+      const values = people.values();
+
+      for (let person of values) {
+        console.log(person);
+      }
+
+      people.keys(); // Same as values
+
+      people.entries(); // Doubled value array
+
+      const students = new Set(['Sean', 'Mina', 'Fiona']);
+
+      students.has('Sean'); // true
+      students.has('Fiona'); // true
+      students.has('Kelly'); // false
+      students.add('Josh');
+      students.add('Sean'); // Unique items, cannot be duplicated
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Proxies</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    // A proxy allows us to overwrite default object methods
+
+    const person = {
+      name: 'Sean',
+      age: 28
+    };
+
+    const personProxy = new Proxy(person, {
+      get(target, name) {
+        console.log('someone is asking for ', target, name);
+        return target[name].toUpperCase(); // personProxy.name returns "SEAN" instead of the normal name
+      },
+      set(target, name, value) {
+        if (typeof value === 'string') {
+          target[name] = value.trim().toUpperCase();
+        }
+      }
+    });
+
+    personProxy.name = 'sean       '; // personProxy.name is set to "SEAN"
+    </script>
+  </body>
+</html>

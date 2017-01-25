@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Proxies for errors</title>
+  </head>
+  <body>
+    <script>
+
+      // In the case of object keys we can create a proxy that will handle the formatting of the key name
+      // const person = { name: 'Sean' };
+      // person.id = 123;
+      // person.iD = 123;
+      // person.ID = 123;
+
+      const safeHandler = {
+        set(target, name, value) {
+          const likeKey = Object.keys(target).find(k => k.toLowerCase() === name.toLowerCase());
+
+          if (!(name in target) && likeKey) {
+            throw new Error(`We already have a(n) ${name} property but formatted as ${likeKey}.`);
+
+            // Throw an error if key exists already with different casing
+          }
+        }
+      };
+
+      const safety = new Proxy({ id: 100 }, safeHandler);
+
+      safety.name = 'Sean';
+      safety.NAME = 'Sean'; // Error thrown
+    </script>
+  </body>
+</html>
